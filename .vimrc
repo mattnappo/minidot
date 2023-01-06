@@ -25,6 +25,9 @@ map <C-s> :split<cr>
 noremap <C-a> :noh \| :NERDTreeRefreshRoot<cr>
 noremap <C-m> :MaximizerToggle<cr>
 
+" fix coc
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
 " Better pane toggling
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-j>
