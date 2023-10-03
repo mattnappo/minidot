@@ -17,8 +17,10 @@ set splitright
 set splitbelow
 let mapleader = ","
 
-map <C-n> :NERDTreeToggle<cr> " Bind ctrl-n to toggle NERDTree
-map <C-p> :FzfFiles<CR> " Fzf search for file
+" Bind ctrl-n to toggle NERDTree
+map <C-n> :NERDTreeToggle<cr>
+" Fzf search for file
+map <C-p> :FzfFiles<CR>
 map <C-t> :tabnew<cr>
 map <C-s> :split<cr>
 
@@ -69,4 +71,4 @@ set t_Co=256
 " Theming
 set background=dark
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox-material
+"colorscheme gruvbox-material
