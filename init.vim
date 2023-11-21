@@ -16,7 +16,8 @@ set virtualedit=block
 set number
 set relativenumber
 set ttimeoutlen=10 " Fix slow O
-set mouse=a
+"set mouse=
+set mouse=
 filetype plugin indent on
 "set colorcolumn=80
 
@@ -39,7 +40,8 @@ map j gj
 map k gk
 
 " Remove highlighting shortcut
-map <C-a> :NERDTreeRefresh<CR>\|:source ~/.config/nvim/init.vim<CR>\|:noh<CR>
+map <C-a> :NERDTreeRefresh<CR>\|:noh<CR>
+" map <C-a> :NERDTreeRefresh<CR>\|:source ~/.config/nvim/init.vim<CR>\|:noh<CR>
 map <C-b><C-x> :!cargo test<CR>
 map <C-b><C-b> :!cargo run<CR>
 map <C-b>:!cargo fmt<CR>
@@ -66,6 +68,10 @@ Plug 'morhetz/gruvbox'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' } 
 Plug 'romgrk/doom-one.vim'
 Plug 'sainnhe/gruvbox-material'
+Plug 'davidosomething/vim-colors-meh'
+Plug 'ku1ik/vim-monokai'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'Mofiqul/vscode.nvim'
 
 " Status lines
 " Plug 'itchyny/lightline.vim'
@@ -93,8 +99,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf' 
 Plug 'junegunn/fzf.vim'
 Plug 'szw/vim-maximizer'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
+
+source ~/.config/nvim/colors.lua
 
 " Set up tags
 set tags=./tags,tags;
@@ -106,6 +115,13 @@ let g:go_fmt_autosave = 1
 " fzf config
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout=  { 'down': '~20%' }
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
 
 " Configure airline
 " let g:airline_powerline_fonts = 1
@@ -138,6 +154,9 @@ inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
+" 2 spaces in OCaml
+autocmd FileType ocaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
 " Fix colors
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -152,12 +171,11 @@ set t_ZR=[23m
 
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean'
+
 "colorscheme material
-colorscheme gruvbox-material
+"colorscheme gruvbox-material
+"colorscheme rose-pine-moon
+"colorscheme catppuccin-frappe
+colorscheme catppuccin
 
-" Colorscheme
-" colorscheme onedark
-" colorscheme dracula
-" colorscheme horizon
-" colorscheme gruvbox
-
+set colorcolumn=80
