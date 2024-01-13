@@ -20,6 +20,10 @@ sudo apt-get install -y git tmux zsh neovim gcc g++ make cmake python3 python3-p
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# install docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+
 # install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
