@@ -7,11 +7,10 @@ tmux source $HOME/.tmux.conf
 echo "configuring zsh"
 cp $HOME/.zshrc $HOME/.zshrc_backup_
 cp .zshrc $HOME/.zshrc
-source $HOME/.zshrc
+. $HOME/.zshrc
 
 echo "configuring bash"
 cat .bashrc >> $HOME/.bashrc
-source $HOME/.bashrc
 
 echo "configuring nvim"
 cp init.vim $HOME/.config/nvim/init.vim

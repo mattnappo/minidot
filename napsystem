@@ -7,6 +7,9 @@
 # (c) Matt Nappo                         #
 ##########################################
 
+# install sudo
+su -c 'apt-get install sudo'
+
 # update system
 sudo apt-get update -y
 sudo apt-get upgrade -y
@@ -21,5 +24,5 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install dotfiles
-sh install.sh
+bash install.sh
 
