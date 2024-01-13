@@ -25,7 +25,7 @@ map <C-n> :NERDTreeToggle<cr>
 " Fzf search for file
 map <C-p> :FzfFiles<CR>
 
-# better pane movement
+" better pane movement
 map <C-h> hzz
 map <C-j> jzz
 map <C-k> kzz
@@ -38,7 +38,7 @@ nnoremap <C-L> <C-W><C-l>
 set splitright
 set splitbelow
 
-# logical line moving
+" logical line moving
 map j gj
 map k gk
 
@@ -98,8 +98,6 @@ Plug 'szw/vim-maximizer'
 Plug 'preservim/nerdcommenter'
 
 call plug#end()
-
-#source ~/.config/nvim/colors.lua
 
 " Set up tags
 set tags=./tags,tags;
