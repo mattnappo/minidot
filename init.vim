@@ -1,7 +1,6 @@
-" curl -fLo ~/.vim/autoload/plug.vim --create-dir https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 syntax on
 syntax enable
+
 set tabstop=4
 set expandtab
 set shiftwidth=4
@@ -16,10 +15,9 @@ set virtualedit=block
 set number
 set relativenumber
 set ttimeoutlen=10 " Fix slow O
-"set mouse=
 set mouse=
 filetype plugin indent on
-"set colorcolumn=80
+set colorcolumn=80
 
 " Switch to left pane map <C-t><down> :td<cr> " Bind ctrl-n to toggle NERDTree
 map <C-n> :NERDTreeToggle<cr>
@@ -27,26 +25,11 @@ map <C-n> :NERDTreeToggle<cr>
 " Fzf search for file
 map <C-p> :FzfFiles<CR>
 
-map <C-s> :!zsh<CR>
-
+# better pane movement
 map <C-h> hzz
 map <C-j> jzz
 map <C-k> kzz
 map <C-l> lzz
-
-map <C-w>m :MaximizerToggle<cr>
-
-map j gj
-map k gk
-
-" Remove highlighting shortcut
-map <C-a> :NERDTreeRefresh<CR>\|:noh<CR>
-" map <C-a> :NERDTreeRefresh<CR>\|:source ~/.config/nvim/init.vim<CR>\|:noh<CR>
-map <C-b><C-x> :!cargo test<CR>
-map <C-b><C-b> :!cargo run<CR>
-map <C-b>:!cargo fmt<CR>
-
-" Better pane toggling
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-j>
 nnoremap <C-K> <C-W><C-k>
@@ -54,6 +37,19 @@ nnoremap <C-L> <C-W><C-l>
 
 set splitright
 set splitbelow
+
+# logical line moving
+map j gj
+map k gk
+
+map <C-w>m :MaximizerToggle<cr>
+
+" Remove highlighting shortcut
+map <C-a> :NERDTreeRefresh<CR>\|:noh<CR>
+" map <C-a> :NERDTreeRefresh<CR>\|:source ~/.config/nvim/init.vim<CR>\|:noh<CR>
+map <C-b><C-x> :!cargo test<CR>
+map <C-b><C-b> :!cargo run<CR>
+map <C-b>:!cargo fmt<CR>
 
 call plug#begin('~/.vim/plugged')
 " Themes
@@ -103,7 +99,7 @@ Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
-source ~/.config/nvim/colors.lua
+#source ~/.config/nvim/colors.lua
 
 " Set up tags
 set tags=./tags,tags;
@@ -122,16 +118,11 @@ let g:NERDCreateDefaultMappings = 1
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
-
-" Configure airline
-" let g:airline_powerline_fonts = 1
-" let g:airline_theme='bubblegum'
+let NERDTreeShowHidden = 1
 
 " Configure status bar
 " set laststatus=2
 " set noshowmode
-" let g:lightline = { 'colorscheme': 'seoul256' }
-" let g:lightline = { 'colorscheme': 'wombat' }
 
 " Configure coc
 let g:coc_disable_startup_warning = 1
@@ -172,10 +163,11 @@ set t_ZR=[23m
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean'
 
+"let g:coc_start_at_startup = v:false
+
 "colorscheme material
 "colorscheme gruvbox-material
 "colorscheme rose-pine-moon
 "colorscheme catppuccin-frappe
 colorscheme catppuccin
 
-set colorcolumn=80
