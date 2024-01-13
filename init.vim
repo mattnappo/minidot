@@ -91,6 +91,7 @@ Plug 'cstrahan/vim-capnp'
 " Other
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale' " lsp
 "Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf' 
 Plug 'junegunn/fzf.vim'
