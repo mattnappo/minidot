@@ -19,6 +19,10 @@ set mouse=
 filetype plugin indent on
 set colorcolumn=80
 
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+
 " better pane movement
 map <C-h> hzz
 map <C-j> jzz
